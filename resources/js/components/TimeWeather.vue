@@ -89,7 +89,7 @@ export default {
 
         getEventHandlers() {
             return {
-                'Buienradar.ForecastsFetched': response => {
+                'OpenWeather.OpenWeatherDataFetched': response => {
                     this.weather = response.weather;
                 },
             };

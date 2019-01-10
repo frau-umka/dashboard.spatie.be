@@ -22,11 +22,6 @@ return [
         'stations' => explode(',', env('VELO_STATIONS')),
     ],
 
-    'buienradar' => [
-        'latitude' => env('BUIENRADAR_LATITUDE'),
-        'longitude' => env('BUIENRADAR_LONGITUDE'),
-    ],
-
     'open_weather' => [
         'api_key' => env('OPEN_WEATHER_KEY'),
     ],

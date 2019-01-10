@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Events\Buienradar;
+namespace App\Events\OpenWeather;
 
 use App\Events\DashboardEvent;
 
-class ForecastsFetched extends DashboardEvent
+class OpenWeatherDataFetched extends DashboardEvent
 {
     /** @var \stdClass */
     public $weather;
