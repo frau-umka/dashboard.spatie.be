@@ -16,5 +16,6 @@ class UpdateDashboardCommand extends Command
         $this->call('dashboard:send-heartbeat');
         $this->call('dashboard:fetch-openweather');
         $this->call('dashboard:fetch-calendar-events');
+        $this->call('dashboard:fetch-current-track');
     }
 }

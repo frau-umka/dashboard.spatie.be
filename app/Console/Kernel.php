@@ -15,6 +15,7 @@ use App\Console\Components\Statistics\FetchGitHubTotalsCommand;
 use App\Console\Components\Dashboard\DetermineAppearanceCommand;
 use App\Console\Components\TeamMember\FetchCurrentTracksCommand;
 use App\Console\Components\Statistics\FetchPackagistTotalsCommand;
+use App\Console\Components\Spotify\FetchCurrentTrackCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -27,6 +28,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command(FetchVeloStationsCommand::class)->everyMinute();
         $schedule->command(DetermineAppearanceCommand::class)->everyMinute();
         $schedule->command(OpenWeatherCommand::class)->everyFiveMinutes();
+        $schedule->command(FetchCurrentTrackCommand::class)->everyMinute();
         // $schedule->command(FetchTasksCommand::class)->everyFiveMinutes();
         // $schedule->command(FetchStatusCommand::class)->everyFiveMinutes();
         // $schedule->command(FetchGitHubTotalsCommand::class)->everyThirtyMinutes();

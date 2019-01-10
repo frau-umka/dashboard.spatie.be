@@ -179,6 +179,7 @@ return [
         App\Services\Velo\VeloServiceProvider::class,
         App\Services\Trains\IRailServiceProvider::class,
         App\Services\OpenWeather\OpenWeatherServiceProvider::class,
+        App\Services\Spotify\SpotifyServiceProvider::class,
     ],
 
     /*

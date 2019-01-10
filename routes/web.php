@@ -7,7 +7,6 @@ use App\Http\Controllers\UpdateTemperatureController;
 
 Route::group(['middleware' => AccessToken::class], function () {
     Route::get('/', DashboardController::class);
-
     Route::post('temperature', UpdateTemperatureController::class);
 });
 

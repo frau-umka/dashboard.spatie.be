@@ -15,6 +15,8 @@ import Twitter from './components/Twitter';
 import Uptime from './components/Uptime';
 import Velo from './components/Velo';
 import TileTimer from './components/TileTimer';
+import Spotify from './components/Spotify';
+
 new Vue({
     el: '#dashboard',
 
@@ -30,6 +32,7 @@ new Vue({
         Uptime,
         Velo,
         TileTimer,
+        Spotify,
     },
 
     created() {
