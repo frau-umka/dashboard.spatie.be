@@ -6,11 +6,11 @@ use App\Events\DashboardEvent;
 
 class ForecastsFetched extends DashboardEvent
 {
-    /** @var array */
-    public $forecasts;
+    /** @var \stdClass */
+    public $weather;
 
-    public function __construct(array $forecasts)
+    public function __construct(\stdClass $weather)
     {
-        $this->forecasts = $forecasts;
+        $this->weather = $weather;
     }
 }

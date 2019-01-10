@@ -3,7 +3,7 @@
 namespace App\Console\Components\Buienradar;
 
 use App\Events\Buienradar\ForecastsFetched;
-use App\Services\Buienradar\Buienradar;
+use App\Services\OpenWeather\OpenWeather;
 use Illuminate\Console\Command;
 
 class FetchBuienradarForecastsCommand extends Command
@@ -12,11 +12,11 @@ class FetchBuienradarForecastsCommand extends Command
 
     protected $description = 'Fetch Buienradar forecasts';
 
-    public function handle(Buienradar $buienradar)
+    public function handle(OpenWeather $buienradar)
     {
         $this->info('Fetching Buienradar forecasts...');
 
-        $forecasts = $buienradar->getForecasts(config('services.buienradar.latitude'), config('services.buienradar.longitude'));
+        $forecasts = $buienradar->getForecasts('Merida,es');
 
         event(new ForecastsFetched($forecasts));
 

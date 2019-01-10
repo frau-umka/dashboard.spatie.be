@@ -2,6 +2,7 @@ import './bootstrap.js';
 
 import Echo from 'laravel-echo';
 import Vue from 'vue';
+import moment from 'moment-timezone';
 
 import Dashboard from './components/Dashboard';
 import Calendar from './components/Calendar';
@@ -14,7 +15,6 @@ import Twitter from './components/Twitter';
 import Uptime from './components/Uptime';
 import Velo from './components/Velo';
 import TileTimer from './components/TileTimer';
-
 new Vue({
     el: '#dashboard',
 
@@ -33,18 +33,18 @@ new Vue({
     },
 
     created() {
-        let config = {
+        const config = {
             broadcaster: 'pusher',
             key: window.dashboard.pusherKey,
-            wsHost: window.location.hostname,
-            wsPath: window.dashboard.clientConnectionPath,
-            wsPort: window.dashboard.wsPort,
-            disableStats: true,
+            cluster: 'eu',
+            encrypted: true
         }
 
-        if (window.dashboard.environment === 'local') {
+        /* if (window.dashboard.environment === 'local') {
             config.wsPort = 6001;
-        }
+        } */
+
+        moment.locale('es');
 
         this.echo = new Echo(config);
     },

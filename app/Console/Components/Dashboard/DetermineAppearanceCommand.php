@@ -20,6 +20,7 @@ class DetermineAppearanceCommand extends Command
 
     public function handle()
     {
+        \Illuminate\Support\Facades\Log::error('SendHeartbeatCommand');
         $this->info('Determining dashboard appearance...');
 
         $appearance = $this->sunIsUp()

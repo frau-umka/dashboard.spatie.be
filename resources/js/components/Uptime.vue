@@ -6,7 +6,7 @@
             >
             <h1>Downtime</h1>
             <ul class="align-self-center">
-                <li v-for="failing in failingUrls">
+                <li v-for="(index, failing) in failingUrls" :key="index">
                     <div class="font-bold truncate">{{ failing.url }}</div>
                 </li>
             </ul>
