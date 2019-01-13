@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
+use SpotifyWebAPI\SpotifyWebAPIException;
 
 class Handler extends ExceptionHandler
 {

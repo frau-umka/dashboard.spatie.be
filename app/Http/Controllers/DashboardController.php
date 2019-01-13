@@ -12,19 +12,24 @@ class DashboardController
 {
     public function __invoke(Request $request)
     {
-        if ($request->has('code')) {
+        /* if ($request->has('code')) {
             $spotify = app(Spotify::class);
 
             $spotify->session->requestAccessToken($request->get('code'));
             $spotify->api->setAccessToken($spotify->session->getAccessToken());
             $user = $spotify->api->me();
 
-            SpotifyModel::create([
+            SpotifyModel::updateOrCreate([
+                'email' => $user->email,
+            ],[
                 'email' => $user->email,
                 'access_token' => $spotify->session->getAccessToken(),
                 'refresh_token' => $spotify->session->getRefreshToken(),
             ]);
-        }
+        } */
+
+        /* $spotify = app(Spotify::class);
+        dd($spotify->api->me()); */
 
         return view('dashboard')->with([
             'pusherKey' => config('broadcasting.connections.pusher.key'),

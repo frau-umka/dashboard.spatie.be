@@ -5,9 +5,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GitHubWebhookController;
 use App\Http\Controllers\UpdateTemperatureController;
 
-Route::group(['middleware' => AccessToken::class], function () {
+Route::group(['middleware' => [AccessToken::class, 'spotify']], function () {
     Route::get('/', DashboardController::class);
-    Route::post('temperature', UpdateTemperatureController::class);
 });
 
 Route::post('/webhook/github', [GitHubWebhookController::class, 'gitRepoReceivedPush']);

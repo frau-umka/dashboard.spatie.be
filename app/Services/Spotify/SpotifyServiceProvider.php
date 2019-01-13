@@ -19,7 +19,6 @@ class SpotifyServiceProvider extends ServiceProvider
       );
       $api = new SpotifyWebAPI();
 
-
       return new Spotify($session, $api);
     });
   }

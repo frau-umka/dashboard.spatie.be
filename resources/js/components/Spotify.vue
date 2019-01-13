@@ -72,7 +72,6 @@ export default {
             return {
                 'Spotify.CurrentTrackFetched': response => {
                   this.authorization = true;
-                  console.log(response.track);
                   this.track = response.track;
                 },
             };
